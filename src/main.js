@@ -6,10 +6,7 @@ import App from './App.vue';
 const app = createApp(App);
 
 const counterModule = {
-    namespaced: true,
-    modules: {
-        counter: counterModule,
-    },
+    namespaced: true, 
     state() {
         return {
             counter: 0,
@@ -55,7 +52,7 @@ const counterModule = {
 
 const store = createStore({
     modules: {
-        counterModule
+        numbers: counterModule,
     },
     state() {
         return {
