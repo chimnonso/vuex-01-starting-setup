@@ -1,15 +1,9 @@
-import { createApp } from 'vue';
+
 import { createStore } from "vuex";
 
-import App from './App.vue';
-
-const app = createApp(App);
 
 const counterModule = {
     namespaced: true,
-    modules: {
-        counter: counterModule,
-    },
     state() {
         return {
             counter: 0,
@@ -55,7 +49,7 @@ const counterModule = {
 
 const store = createStore({
     modules: {
-        counterModule
+        numbers: counterModule,
     },
     state() {
         return {
@@ -89,6 +83,5 @@ const store = createStore({
         }
     }
 });
-app.use(store);
-app.mount('#app');
 
+export default store;
